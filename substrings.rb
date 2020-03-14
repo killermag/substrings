@@ -5,12 +5,14 @@ def substrings(string,dictionary)
 
     hash = {}
 
+    # making a new array which is downcased and removing all punctuations.
     puts new_array = string.downcase.split.map {
     |word|
     word.gsub(/[^a-zA-Z0-9]/,'')
 }
 
-dictionary.each do |word|
+    # Matching
+    dictionary.each do |word|
     hash[word] = 0
     new_array.each do |this_word|
         if this_word[0..-1].index(word) != nil
@@ -18,6 +20,7 @@ dictionary.each do |word|
         end
     end
 end
+#returning the complete hash
 hash
 
 end
